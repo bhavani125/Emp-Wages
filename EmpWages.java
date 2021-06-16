@@ -5,17 +5,20 @@ public class EmpWages
 	public static int isPartTime=2;
 	public static int WagePerHr=20;
 	public static int DaysInMonth=20;
+	public static int MaxWorkingHrs=100;
     public static void main(String[] args)
   {
 	  // LOCAL VARIABLES
-     int DailyWage;
+     int EmpWages=0;
      int WorkingHrs=0;
-	 int EmpWages=0;
+	 int TotalWorkingHrs=0;
+	 int TotalWorkingDays=0;
 	 // COMPUTATION
-	 for (int day=0; day<DaysInMonth; day++)
+	  while(TotalWorkingHrs <= MaxWorkingHrs &&  TotalWorkingDays < DaysInMonth  )
      {    
       int empcheck = (int) Math.floor(Math.random() * 10) % 3;
-      switch (empcheck)
+      ++TotalWorkingDays;
+	  switch (empcheck)
       {
        case 1:
            System.out.println("Employee is present FullTime");
@@ -29,10 +32,10 @@ public class EmpWages
         System.out.println("Employee is Absent");
         WorkingHrs=0;
       }
-     DailyWage=WorkingHrs * WagePerHr;
-	 EmpWages += DailyWage;
-     System.out.println("Daily wage of employee is " + DailyWage);
+	  TotalWorkingHrs += WorkingHrs;
+     System.out.println("day#: " + TotalWorkingDays + " Emp working Hrs : " +WorkingHrs );
     }
-	 System.out.println("Total employee wages for a month : " + EmpWages);
+	 EmpWages = TotalWorkingHrs * WagePerHr;
+	 System.out.println("Total employee wages : " + EmpWages);
 }
 }
