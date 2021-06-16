@@ -11,22 +11,21 @@ public class EmpWages
      int WorkingHrs=0;
 	 int EmpWage=0;
 	 // COMPUTATION
-     double empcheck = Math.floor(Math.random() * 10) % 3;
-     if(empcheck == isFullTime)
+     int empcheck = (int) Math.floor(Math.random() * 10) % 3;
+     switch (empcheck)
      {
-       System.out.println("Employee is present");
-       WorkingHrs=8;
-     }
-     else if (empcheck == isPartTime)
-	 {
-		 System.out.println("Employee is present but for PartTime");
+       case 1:
+           System.out.println("Employee is present FullTime");
+           WorkingHrs=8;
+           break;
+       case 2:
+          System.out.println("Employee is present for PartTime");
           WorkingHrs=4;
-     }
-	 else
-     {
+          break;
+       default:
         System.out.println("Employee is Absent");
         WorkingHrs=0;
-     }
+      }
      DailyWage=WorkingHrs * WagePerHr;
      System.out.println("Daily wage of employee is " + DailyWage);
     }
