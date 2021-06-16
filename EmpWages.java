@@ -10,7 +10,7 @@ public class EmpWages
 	  // LOCAL VARIABLES
      int DailyWage;
      int WorkingHrs=0;
-	 int EmpWage=0;
+	 int EmpWages=0;
 	 // COMPUTATION
 	 for (int day=0; day<DaysInMonth; day++)
      {    
@@ -30,9 +30,9 @@ public class EmpWages
         WorkingHrs=0;
       }
      DailyWage=WorkingHrs * WagePerHr;
-	 totalDailyWage += DailyWage;
+	 EmpWages += DailyWage;
      System.out.println("Daily wage of employee is " + DailyWage);
     }
-	 System.out.println("Total employee wages for a month : " + toatlDailyWage)
+	 System.out.println("Total employee wages for a month : " + EmpWages);
 }
 }
